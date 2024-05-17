@@ -13,6 +13,7 @@ import org.bukkit.FireworkEffect;
 import org.bukkit.FireworkEffect.Type;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Monster;
@@ -108,4 +109,28 @@ public final class Main extends JavaPlugin implements Listener {
 
         }
     }
+//    @EventHandler
+//    public void onDamage(EntityDamageByEntityEvent e) {
+//    if (!(e.getEntity() instanceof Player player)) return;
+//
+//    // 攻撃を受けたエンティティがプレイヤーであることを確認
+//
+//    if (e.getDamager() instanceof Monster || e.getDamager() instanceof Arrow) {
+//    // Bukkitのスケジューラを使用して非同期タスクを作成
+//      Bukkit.getScheduler().runTaskLaterAsynchronously(this, () -> {
+//        // ここに非同期で実行したい処理を書く
+//        // 注意: プレイヤーの体力を変更するなどの、スレッドセーフでない処理はここに直接書かない
+//
+//        // 非同期タスクの後、メインスレッドでプレイヤーの回復処理を行う
+//        Bukkit.getScheduler().runTask(this, () -> {
+//          // プレイヤーのライフをマックスに設定
+//          AttributeInstance maxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+//          if (maxHealth != null) {
+//            double maxValue = maxHealth.getValue();
+//            player.setHealth(maxValue);
+//          }
+//        });
+//      }, 2L); // 20Lは遅延時間（20 ticks = 1 second）
+//    }
+//  }
 }
